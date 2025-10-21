@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_todo_app/core/constance/app_color.dart';
-import 'package:flutter_todo_app/feature/home/home.dart';
-import 'package:flutter_todo_app/feature/todo/update_todo.dart';
+import 'package:flutter_todo_app/core/navigation/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +14,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Todo App',
       debugShowCheckedModeBanner: false,
+      initialRoute: AppRoutes.home,
+      onGenerateRoute: AppRoutes.generateRoute,
+
       theme: ThemeData(
         primaryColor: AppColors.primaryLight,
         scaffoldBackgroundColor: AppColors.backgroundLight,
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
         ),
         textTheme: TextTheme(bodyMedium: TextStyle(color: AppColors.textLight)),
       ),
-      // Dark theme
+
       darkTheme: ThemeData(
         primaryColor: AppColors.primaryDark,
         scaffoldBackgroundColor: AppColors.backgroundDark,
@@ -48,12 +50,8 @@ class MyApp extends StatelessWidget {
         ),
         textTheme: TextTheme(bodyMedium: TextStyle(color: AppColors.textDark)),
       ),
+
       themeMode: ThemeMode.light,
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const Home(),
-        '/update': (context) => const UpdateTodo(),
-      },
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_todo_app/feature/todo/update_todo.dart';
 import 'list_item.dart';
 import 'model.dart';
 import 'api.dart';
@@ -173,7 +174,11 @@ class _HomeState extends State<Home> {
                           }
                         },
                         onEdit: () {
-                          Navigator.pushNamed(context, '/update');
+                          Navigator.pushNamed(
+                            context,
+                            '/update',
+                            arguments: {'id': product.id},
+                          );
                         },
                       );
                     }, childCount: products.length),
