@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_todo_app/core/constance/app_color.dart';
 import 'package:flutter_todo_app/feature/home/home.dart';
-import 'package:flutter_todo_app/feature/todo/create_todo.dart';
+import 'package:flutter_todo_app/feature/todo/update_todo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const Home(),
-        '/create': (context) => const CreateTodo(),
+        '/update': (context) => const UpdateTodo(),
       },
     );
   }
