@@ -120,7 +120,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Infinity scrolling todo app",
+          "Infinity scrolling app",
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
         centerTitle: false,
@@ -172,11 +172,14 @@ class _HomeState extends State<Home> {
                             deleteItem(product.id!);
                           }
                         },
-                        onEdit: () {
+                        onTap: () {
                           Navigator.pushNamed(
                             context,
-                            '/update',
-                            arguments: {'id': product.id},
+                            '/details',
+                            arguments: {
+                              'id': product.id,
+                              'url': product.thumbnail,
+                            },
                           );
                         },
                       );

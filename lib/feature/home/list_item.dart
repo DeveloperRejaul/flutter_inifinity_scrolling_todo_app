@@ -89,20 +89,6 @@ class ListItem extends StatelessWidget {
                     ),
                   ],
                 ),
-                Positioned(
-                  top: 0,
-                  right: 0,
-                  child: IconButton(
-                    onPressed: () {
-                      onEdit?.call();
-                    },
-                    icon: const Icon(
-                      Icons.border_color,
-                      color: Colors.blue,
-                      size: 20,
-                    ),
-                  ),
-                ),
               ],
             ),
           ),

@@ -1,13 +1,11 @@
 // lib/core/routes/app_routes.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_todo_app/feature/home/home.dart';
-import 'package:flutter_todo_app/feature/todo/update_todo.dart';
+import 'package:flutter_todo_app/feature/home/details.dart';
 
 class AppRoutes {
   static const String home = '/';
-  static const String updateTodo = '/update';
-  static const String addTodo = '/add';
-  static const String settings = '/settings';
+  static const String updateTodo = '/details';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -18,7 +16,9 @@ class AppRoutes {
         final args = settings.arguments as Map<String, dynamic>?;
 
         if (args != null && args.containsKey('id')) {
-          return MaterialPageRoute(builder: (_) => UpdateTodo(id: args['id']));
+          return MaterialPageRoute(
+            builder: (_) => DetailsScreen(id: args['id'], url: args['url']),
+          );
         }
         return _errorRoute();
 
